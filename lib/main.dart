@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,22 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: MyPage());
-  }
-}
-
-class MyPage extends StatefulWidget {
-  const MyPage({super.key});
-
-  @override
-  State<MyPage> createState() => _MyPageState();
-}
-
-class _MyPageState extends State<MyPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Container(child: const Text("Hello"))),
-    ); // Scaffold
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyPage(),
+    );
   }
 }
